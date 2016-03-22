@@ -3,7 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.xuanjie.mapper.XxxUserMapper">
-	<select id="find" resultType="xxxUser" parameterType="xxxUser">
+	<resultMap type="xxxUser" id="xxxxUser">
+		<id property="id" column="id"/>
+		<result property="name" column="name"/>
+		<result property="levelno" column="level_no"/>
+		<result property="createtime" column="createtime"/>
+		<result property="age" column="age"/>
+	</resultMap>
+	<select id="find" resultMap="xxxxUser" parameterType="xxxUser">
 		select * from [jiuhuan].[dbo].[XXXUser]
 		<where>
 			<if test="name!=null and name!=''">

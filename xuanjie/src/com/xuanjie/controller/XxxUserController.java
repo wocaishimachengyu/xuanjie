@@ -25,7 +25,7 @@ public class XxxUserController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return xxxuser.getCreatetime().toString();
+		return xxxuser.getLevelno().toString();
 	}
 	@RequestMapping(value="/add.action")
 	public @ResponseBody int add(String name,String levelno,String age){

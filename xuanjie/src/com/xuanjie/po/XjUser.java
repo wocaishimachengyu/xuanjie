@@ -7,7 +7,7 @@ public class XjUser {
 	private String levelno;
 	private String account;
 	private String password;
-	private String indentityid;
+	private String identityid;
 	private String username;
 	private String telephone;
 	private String address;
@@ -16,30 +16,28 @@ public class XjUser {
 	private String photo;
 	private Integer userstate;
 	private String logininfo;
-	private Date producttime;
+	private Date producetime;
 	private String loginmode;
 	private String szqqinfo;
 	private String szagentip;
 	private String szreferee;
 	private String sztoken;
 	private String userclass;
-	private String szkey;
-	public XjUser() {
-		super();
-	}
+	private String mgr;
+	private String submchid;
 	public XjUser(String userno, String levelno, String account,
-			String password, String indentityid, String username,
+			String password, String identityid, String username,
 			String telephone, String address, String paypassword,
 			String shopname, String photo, Integer userstate, String logininfo,
-			Date producttime, String loginmode, String szqqinfo,
+			Date producetime, String loginmode, String szqqinfo,
 			String szagentip, String szreferee, String sztoken,
-			String userclass, String szkey) {
+			String userclass, String mgr, String submchid) {
 		super();
 		this.userno = userno;
 		this.levelno = levelno;
 		this.account = account;
 		this.password = password;
-		this.indentityid = indentityid;
+		this.identityid = identityid;
 		this.username = username;
 		this.telephone = telephone;
 		this.address = address;
@@ -48,14 +46,18 @@ public class XjUser {
 		this.photo = photo;
 		this.userstate = userstate;
 		this.logininfo = logininfo;
-		this.producttime = producttime;
+		this.producetime = producetime;
 		this.loginmode = loginmode;
 		this.szqqinfo = szqqinfo;
 		this.szagentip = szagentip;
 		this.szreferee = szreferee;
 		this.sztoken = sztoken;
 		this.userclass = userclass;
-		this.szkey = szkey;
+		this.mgr = mgr;
+		this.submchid = submchid;
+	}
+	public XjUser() {
+		super();
 	}
 	public String getUserno() {
 		return userno;
@@ -81,11 +83,11 @@ public class XjUser {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getIndentityid() {
-		return indentityid;
+	public String getIdentityid() {
+		return identityid;
 	}
-	public void setIndentityid(String indentityid) {
-		this.indentityid = indentityid;
+	public void setIdentityid(String identityid) {
+		this.identityid = identityid;
 	}
 	public String getUsername() {
 		return username;
@@ -135,11 +137,11 @@ public class XjUser {
 	public void setLogininfo(String logininfo) {
 		this.logininfo = logininfo;
 	}
-	public Date getProducttime() {
-		return producttime;
+	public Date getProducetime() {
+		return producetime;
 	}
-	public void setProducttime(Date producttime) {
-		this.producttime = producttime;
+	public void setProducetime(Date producetime) {
+		this.producetime = producetime;
 	}
 	public String getLoginmode() {
 		return loginmode;
@@ -177,10 +179,16 @@ public class XjUser {
 	public void setUserclass(String userclass) {
 		this.userclass = userclass;
 	}
-	public String getSzkey() {
-		return szkey;
+	public String getMgr() {
+		return mgr;
 	}
-	public void setSzkey(String szkey) {
-		this.szkey = szkey;
+	public void setMgr(String mgr) {
+		this.mgr = mgr;
+	}
+	public String getSubmchid() {
+		return submchid;
+	}
+	public void setSubmchid(String submchid) {
+		this.submchid = submchid;
 	}
 }

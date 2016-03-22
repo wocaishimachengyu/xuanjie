@@ -2,13 +2,32 @@ package com.xuanjie.webservice;
 
 import javax.xml.ws.Holder;
 
-public class Userlist implements IUserList {
+import org.springframework.beans.factory.annotation.Autowired;
 
+import com.xuanjie.po.XjUser;
+import com.xuanjie.service.XjUserService;
+import com.xuanjie.util.CheckMessage;
+
+
+public class Userlist implements IUserList {
+	@Autowired
+	private XjUserService xjuserservice;
 	@Override
 	public String login(String account, String strmd5, String tokencontent,
 			String sign) {
 		// TODO Auto-generated method stub
-		return null;
+//		if (CheckMessage.check((account + strmd5 + tokencontent + "general"),
+//				sign)) {
+			XjUser xjuser = null;
+			try {
+				xjuser = xjuserservice.findbyaccount(account);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			String pass=xjuser.getUsername();
+//		}
+		return pass;
 	}
 
 	@Override

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xuanjie.mapper.XjUserMapper">
+		<resultMap type="xjUser" id="xjuser">
+		<id property="userno" column="user_no"/>
+		<result property="levelno" column="level_no"/>
+		<result property="account" column="account"/>
+		<result property="password" column="password"/>
+		<result property="identityid" column="identityid"/>
+		<result property="username" column="user_name"/>
+		<result property="telephone" column="telephone"/>
+		<result property="address" column="address"/>
+		<result property="paypassword" column="pay_password"/>
+		<result property="shopname" column="shop_name"/>
+		<result property="photo" column="photo"/>
+		<result property="userstate" column="user_state"/>
+		<result property="producetime" column="produce_time"/>
+		<result property="loginmode" column="login_mode"/>
+		<result property="szqqinfo" column="szqqinfo"/>
+		<result property="szagentip" column="szagentip"/>
+		<result property="szreferee" column="szreferee"/>
+		<result property="sztoken" column="sztoken"/>
+		<result property="userclass" column="userclass"/>
+		<result property="mgr" column="mgr"/>
+		<result property="submchid" column="submchid"/>
+	</resultMap>
+	<select id="findbyaccount" parameterType="java.lang.String" resultMap="xjuser">
+		select * from [jiuhuan].[dbo].[xj_user]
+		<where>
+			<if test="_parameter!=null and _parameter!=''">
+				account=#{_parameter}
+			</if>
+		</where>
+	</select>
+</mapper>

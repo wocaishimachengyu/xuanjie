@@ -25,10 +25,11 @@
     <bean id="hello" class="service.HelloWorldImpl"/>  
     <bean id="userlist" class="com.xuanjie.webservice.Userlist"/>
     <jaxws:endpoint id="Userlist" implementor="#userlist" address="/Userlist"/>
-    <jaxws:endpoint id="helloWorld" implementor="#hello" address="/HelloWorld" />  
+    <jaxws:endpoint id="helloWorld" implementor="#hello" address="/services/HelloWorld" />  
 
 	<bean id="haoDuanServiceImpl" class="com.xuanjie.serviceimpl.HaoDuanServiceImpl"/>
 	<bean id="kjpayJfproductServiceImpl" class="com.xuanjie.serviceimpl.KjpayJfproductServiceImpl"/>
 	<bean id="xxxUserServiceImpl" class="com.xuanjie.serviceimpl.XxxUserServiceImpl"/>
+	<bean id="xjUserServiceImpl" class="com.xuanjie.serviceimpl.XjUserServiceImpl"/>
 
 </beans>
