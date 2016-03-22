@@ -18,15 +18,17 @@
 		http://www.springframework.org/schema/tx 
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd 
 		http://cxf.apache.org/jaxws   
-    http://cxf.apache.org/schemas/jaxws.xsd">
-<bean id="haoDuanServiceImpl" class="com.xuanjie.serviceimpl.HaoDuanServiceImpl"/>
-<bean id="kjpayJfproductServiceImpl" class="com.xuanjie.serviceimpl.KjpayJfproductServiceImpl"/>
-<bean id="xxxUserServiceImpl" class="com.xuanjie.serviceimpl.XxxUserServiceImpl"/>
- <import resource="classpath:META-INF/cxf/cxf.xml" />  
+    	http://cxf.apache.org/schemas/jaxws.xsd">
+ 	<import resource="classpath:META-INF/cxf/cxf.xml" />  
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />  
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />  
-      
     <bean id="hello" class="service.HelloWorldImpl"/>  
-      
+    <bean id="userlist" class="com.xuanjie.webservice.Userlist"/>
+    <jaxws:endpoint id="Userlist" implementor="#userlist" address="/Userlist"/>
     <jaxws:endpoint id="helloWorld" implementor="#hello" address="/HelloWorld" />  
+
+	<bean id="haoDuanServiceImpl" class="com.xuanjie.serviceimpl.HaoDuanServiceImpl"/>
+	<bean id="kjpayJfproductServiceImpl" class="com.xuanjie.serviceimpl.KjpayJfproductServiceImpl"/>
+	<bean id="xxxUserServiceImpl" class="com.xuanjie.serviceimpl.XxxUserServiceImpl"/>
+
 </beans>
